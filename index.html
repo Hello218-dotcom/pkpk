@@ -72,11 +72,13 @@
 
     /* NOTE: container will be OVERRIDDEN later (after external css) to force perfect centering */
     .container{
-      max-width:var(--maxw);
-      margin:auto;
-      padding:0 var(--safeR);
-      padding-left:var(--safeL);
-      padding-right:var(--safeR);
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
+}
+
     }
 
     .mt-3{ margin-top:18px; }
@@ -771,6 +773,16 @@
 
   <link rel="stylesheet" href="assets/cm-enhance.css">
   <link rel="stylesheet" href="assets/stoxgear-cinema.css">
+  <style>
+  .container{
+    max-width: var(--maxw) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: max(24px, env(safe-area-inset-left)) !important;
+    padding-right: max(24px, env(safe-area-inset-right)) !important;
+  }
+</style>
+
 
   <!-- ✅ FIX (AFTER external css): force container perfectly centered like screenshot -->
   <style>
